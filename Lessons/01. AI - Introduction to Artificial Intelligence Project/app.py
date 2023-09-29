@@ -8,12 +8,6 @@ st.title("🧩 Charles Nana Kwakye's Cryptoarithmetic Puzzle")
 
 user_input = st.text_input(label="Enter puzzle")
 state = st.button(label="Find Solution", on_click=None, type="primary", use_container_width=False)
-# import time
-# import streamlit as st
-
-# with st.spinner('Wait for it...'):
-#     time.sleep(5)
-# st.success('Done!')
 
 if state:
     try:
@@ -43,7 +37,7 @@ if state:
 
 
                 def constraint_unique(variables, values):
-                    return len(values) == len(set(values))  # remove repeated values and count
+                    return len(values) == len(set(values)) 
 
                 def constraint_dynamic_operation(variables, values):
                     int_list_processed_factor = []
@@ -52,10 +46,10 @@ if state:
                     processed_factor = ""
                     processed_result = ""
                     for char in factor:
-                    # if the character is a letter, find its index in the tuple and append it to the output
+                   
                         if char.isalpha():
                             processed_factor += str(values[variables.index(char)])
-                    # if the character is an operator, add it to the list
+                    
                         else:
                             int_list_processed_factor.append(int(processed_factor))
                             if char != "=":
